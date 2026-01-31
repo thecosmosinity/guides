@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="main.css">
+<link rel="icon" href="img/saesmoke.png">
+<title>Get Windows 11 On Unsupported PC's</title>
+<img src="img/saesmoke.png" alt="Logo" width="340" height="340" style="float: right; margin: 0 0 10px 10px">
+
+<!-- why are you here? :) -->
+
+<h1>Hello!</h1>
+<h3>you can also use this for intel macs, as they dont natively support windows 11, only windows 10!</h3>
+<h4>this is a guide for those of you that have old pcs/laptops that don't meet the minimum requirements, but still want windows 11</h4>
+<p>Microsoft, being the pain in the ass they are, decided to remove support for all computers that don't have an 8th gen processor, secure boot, and tpm 2.0</p>
+<p>so, this "killed" a bunch of computers, that are still perfectly fine, just because of these assholes...</p>
+<p>so, i'll teach you how you can bypass this and run windows 11 on the WORST of computers...</p>
+<p>for example, i got it running on a merom, intel core two duo with 2 gigabytes of ram...</p>
+
+<br>
+
+<p>alright, enough yap now, let's get into it!</p>
+<p>the first thing you need to do is get rufus, from <a href="https://rufus.ie/">here</a>, or you can download it directly from <a href=https://github.com/pbatard/rufus/releases/download/v4.12/rufus-4.12.exe>here!</a></p>
+<a>this is the latest version as of 31-01-2025, so a newer version may be available!!!</a>
+<p>you also need a pendrive, 16 gigabytes worked the best for me!</p>
+<p>then, download the windows iso from the microsoft servers, <a href="https://www.microsoft.com/en-us/software-download/windows11">here</a></p>
+<p>then, it should lead you to this page</p>
+<img src="img/win11-1.png" width="640" height="480">
+<p>from here, scroll down a bit until you see windows 11 disk image (iso)</p>
+<img src="img/win11-2.png" width="640" height="480">
+<p>from here, click the dropdown menu and select the only option there, then hit confirm again.</p>
+<img src="img/win11-3.png" width="640" height="480">
+<p>then select your language, i went with english us, but you can scroll down to your language. make sure you don't get this wrong!!</p>
+<img src="img/win11-4.png" width="640" height="480">
+<p>it will show this several times, so just wait it out...</p>
+<p>now you can download the iso! click 64-bit download.</p>
+<img src="img/win11-5.png" width="640" height="480">
+<p>alright! now open up rufus. double click the file you installed and select your iso in the "boot selection" dropdown</p>
+<p>make sure target system is set to what you will use! mbr/bios for machines that have legacy bioses, mostly computers from before 2017</p>
+<P>and uefi for newer computers, choose uefi only if your laptop/computer supports it!!</P>
+<p>now click start!</p>
+<p>it will show you some options, with "bypass tpm 2.0 and secure boot check" already enabled, if it isn't turn it on! you NEED this for the patch to work</p>
+<P>after its done flashing, reboot your computer and boot off the pendrive, or press windows+e and select your drive under the "this pc" dropdown </P>
+<p> then hit setup! if you did it the reboot way, you do it like a normal installation of windows! just use upgrade instead of custom.</p>
+<h2>ATTENTION!!! YOU CANNOT USE THE REBOOT METHODS FOR MACS PRE-2020!!! USE THE PEN DRIVE METHOD ONLY!!!</h2>
+<p>and that's it! you now have windows 11 working!!</p>

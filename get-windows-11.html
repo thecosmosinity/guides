@@ -1,48 +1,76 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="main.css">
-<link rel="icon" href="img/saesmoke.png">
-<title>Get Windows 11 On Unsupported PC's</title>
-<img src="img/saesmoke.png" alt="Logo" width="340" height="340" style="float: right; margin: 0 0 10px 10px">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="img/saesmoke.png">
+    <title>win11.bypass // full guide</title>
+    <style>
+        body { background: #0a0a0a; color: #ececec; font-family: 'Consolas', monospace; padding: 40px; line-height: 1.6; }
+        .guide-container { max-width: 900px; }
+        .mac-warning { background: #1a0000; border: 2px solid #ff4444; padding: 20px; color: #ff4444; font-weight: bold; margin: 20px 0; text-transform: uppercase; border-radius: 8px; }
+        .step { background: #161616; border-left: 4px solid #4ade80; padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+        .step h2 { color: #4ade80; margin-top: 0; font-size: 1.3rem; }
+        .img-block { border: 1px solid #333; margin: 15px 0; display: block; max-width: 100%; height: auto; border-radius: 4px; }
+        code { color: #4ade80; background: #000; padding: 2px 5px; border-radius: 3px; }
+        .highlight { color: #007acc; font-weight: bold; }
+        .method-header { color: #007acc; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; border-bottom: 1px solid #333; }
+    </style>
+</head>
+<body>
+    <img src="img/saesmoke.png" alt="Logo" width="280" style="float: right; margin-left: 20px; filter: drop-shadow(0 0 5px #4ade80);">
 
-<!-- why are you here? :) -->
+    <div class="guide-container">
+        <h1>[ BYPASSING MICROSOFT'S PLANNED OBSOLESCENCE ]</h1>
+        <p>
+            Microsoft "killed" millions of perfectly fine PCs by requiring TPM 2.0 and 8th Gen CPUs. 
+            I got it running on a <span class="highlight">Core 2 Duo with 2GB of RAM</span>. Here is the full breakdown.
+        </p>
 
-<h1>Hello!</h1>
-<h3>you can also use this for intel macs, as they dont natively support windows 11, only windows 10!</h3>
-<h4>this is a guide for those of you that have old pcs/laptops that don't meet the minimum requirements, but still want windows 11</h4>
-<p>Microsoft, being the pain in the ass they are, decided to remove support for all computers that don't have an 8th gen processor, secure boot, and tpm 2.0</p>
-<p>so, this "killed" a bunch of computers, that are still perfectly fine, just because of these assholes...</p>
-<p>so, i'll teach you how you can bypass this and run windows 11 on the WORST of computers...</p>
-<p>for example, i got it running on a merom, intel core two duo with 2 gigabytes of ram...</p>
+        <div class="mac-warning">
+            🚨 MAC USERS: For Intel Macs (Pre-2020), do NOT reboot into the installer. Run setup.exe from within Windows 10 to avoid bootloader issues!
+        </div>
 
-<br>
+        <div class="step">
+            <h2>01. SOURCE THE ISO</h2>
+            <p>Go to the <a href="https://www.microsoft.com/en-us/software-download/windows11" style="color:#4ade80;">Official Download Page</a>.</p>
+            <img src="img/win11-1.png" width="640" height="480" class="img-block" alt="Select Download">
+            <p>Scroll down to <span class="highlight">"Windows 11 Disk Image (ISO)"</span>.</p>
+            <img src="img/win11-2.png" width="640" height="480" class="img-block" alt="ISO Selection">
+            <p>Select the only option, hit confirm, and choose your language (e.g., English US).</p>
+            <img src="img/win11-3.png" width="640" height="480" class="img-block" alt="Confirm Selection">
+            <img src="img/win11-4.png" width="640" height="480" class="img-block" alt="Language Selection">
+            <p>Wait for the validation, then click <strong>64-bit Download</strong>.</p>
+            <img src="img/win11-5.png" width="640" height="480" class="img-block" alt="Final Download Link">
+        </div>
 
-<p>alright, enough yap now, let's get into it!</p>
-<p>the first thing you need to do is get rufus, from <a href="https://rufus.ie/">here</a>, or you can download it directly from <a href=https://github.com/pbatard/rufus/releases/download/v4.12/rufus-4.12.exe>here!</a></p>
-<a>this is the latest version as of 31-01-2025, so a newer version may be available!!!</a>
-<p>you also need a pendrive, 16 gigabytes worked the best for me!</p>
-<p>then, download the windows iso from the microsoft servers, <a href="https://www.microsoft.com/en-us/software-download/windows11">here</a></p>
-<p>then, it should lead you to this page</p>
-<img src="img/win11-1.png" width="640" height="480">
-<p>from here, scroll down a bit until you see windows 11 disk image (iso)</p>
-<img src="img/win11-2.png" width="640" height="480">
-<p>from here, click the dropdown menu and select the only option there, then hit confirm again.</p>
-<img src="img/win11-3.png" width="640" height="480">
-<p>then select your language, i went with english us, but you can scroll down to your language. make sure you don't get this wrong!!</p>
-<img src="img/win11-4.png" width="640" height="480">
-<p>it will show this several times, so just wait it out...</p>
-<p>now you can download the iso! click 64-bit download.</p>
-<img src="img/win11-5.png" width="640" height="480">
-<p>alright! now open up rufus. double click the file you installed and select your iso in the "boot selection" dropdown</p>
-<p>make sure target system is set to what you will use! mbr/bios for machines that have legacy bioses, mostly computers from before 2017</p>
-<P>and uefi for newer computers, choose uefi only if your laptop/computer supports it!!</P>
-<p>now click start!</p>
-<p>it will show you some options, with "bypass tpm 2.0 and secure boot check" already enabled, if it isn't turn it on! you NEED this for the patch to work</p>
-<P>after its done flashing, reboot your computer and boot off the pendrive, or press windows+e and select your drive under the "this pc" dropdown </P>
-<p> then hit setup! if you did it the reboot way, you do it like a normal installation of windows! just use upgrade instead of custom.</p>
-<h2>ATTENTION!!! YOU CANNOT USE THE REBOOT METHOD FOR MACS PRE-2020!!! USE THE PEN DRIVE METHOD ONLY!!!</h2>
-<a>in my personal experience, the reboot method for my 2018 macbook pro was HOT FLAMING GARBAGE. so just use the method where you just run it off the drive instead of rebooting</a>
-<p>and that's it! you now have windows 11 working!!</p>
+        <h2 class="method-header">METHOD A: THE RUFUS PATH (PENDRIVE)</h2>
+        <div class="step">
+            <p>1. Get <strong>Rufus</strong> from <a href="https://rufus.ie/" style="color:#4ade80;">rufus.ie</a>.</p>
+            <p>2. Select your ISO. Set Target System to <strong>MBR/BIOS</strong> for legacy machines (pre-2017) or <strong>UEFI</strong> for newer ones.</p>
+            <p>3. Hit START and ensure <span class="highlight">"Bypass TPM 2.0 and Secure Boot check"</span> is enabled.</p>
+            <p>4. For non-apple computers, either reboot into the installer and upgrade or start fresh, or you can do this method</p>
+            <p><strong>Pay attention intel mac users!!! this is the only reliable method you can use!</strong></p>
+            <p>1. if you already have windows installed, select your pen drive in the this pc drop-down menu and run setup.exe</p>
+            <p>2. if you really want to gamble but start fresh with windows 11, reboot into the installer but <strong>FIRST KEEP YOUR BOOTCAMP WINDOWS 10 DRIVERS HANDY!</strong></p>
+            <p>3. select "custom" and delete the bootcamp partition. then make a new volume and continue with the install.</p>
+        </div>
 
-<a href="thecosmosinity.github.io">go back</a>
+        <h2 class="method-header">METHOD B: THE "MIDNIGHT" NO-PENDRIVE HACK</h2>
+        <div class="step">
+            <p>If you don't have a spare USB drive, use this manual bypass (works for intel macs too!):</p>
+            <ol>
+                <li>Double-click your <code>Windows.iso</code> to mount it.</li>
+                <li><strong>Copy every file</strong> from the ISO into a new folder on your Desktop or Data drive.</li>
+                <li>Open the <code>sources</code> folder inside that new folder.</li>
+                <li>Search for and <strong>DELETE</strong> the file: <code>appraiserres.dll</code>.</li>
+                <li>Go back to the main folder and run <code>setup.exe</code>.</li>
+            </ol>
+            <p>By removing that DLL, you've just stripped the installer's ability to check for TPM and Secure Boot.</p>
+        </div>
 
-
+        <br>
+        <a href="index.html"><button class="osx">RETURN TO HUB</button></a>
+    </div>
+</body>
+</html>
